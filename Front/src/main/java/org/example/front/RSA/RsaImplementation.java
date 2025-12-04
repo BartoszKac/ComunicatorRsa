@@ -2,6 +2,7 @@ package org.example.front.RSA;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class RsaImplementation {
@@ -94,7 +95,13 @@ public class RsaImplementation {
     }
 
 
-    public  void DescriptionMessege(String s){}
+    public String DescriptionMessege(String s){
+        return Arrays.stream(s.split(" "))
+                .map(BigInteger::new)
+                .map(this::decryption)
+                .map(bi -> Character.toString((char) bi.intValue()))
+                .collect(Collectors.joining());
+    }
 
 
 }

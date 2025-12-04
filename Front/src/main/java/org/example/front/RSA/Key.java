@@ -8,10 +8,14 @@ public class Key {
 
     @Override
     public String toString() {
-        return "Key{" +
-                "x1=" + x1 +
-                ", x2=" + x2 +
-                '}';
+        return  x1 + ":" + x2;
+    }
+
+    public Key StringtoKey(String s) {
+        String[] parts = s.split(":");
+        BigInteger x1 = new BigInteger(parts[0]);
+        BigInteger x2 = new BigInteger(parts[1]);
+        return new Key(x1, x2);
     }
 
     public Key(BigInteger x1, BigInteger x2) {
