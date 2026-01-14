@@ -15,6 +15,10 @@ public class MainMenu {
     }
 
     public void showMenu(Stage stage) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
         // Tworzymy przyciski do ekranów
         Button loginButton = new Button("Login");
         Button registerButton = new Button("Register");
@@ -40,6 +44,28 @@ public class MainMenu {
         Scene scene = new Scene(root, 300, 200);
         stage.setScene(scene);
         stage.setTitle("Main Menu");
+<<<<<<< HEAD
+=======
+=======
+        Button loginButton = new Button("Zaloguj się");
+        Button registerButton = new Button("Zarejestruj się");
+
+        String btnStyle = "-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 5;";
+        loginButton.setStyle(btnStyle);
+        registerButton.setStyle(btnStyle + "-fx-background-color: #2ecc71;"); // Zielony dla rejestracji
+
+        VBox root = new VBox(15, loginButton, registerButton);
+        root.setAlignment(javafx.geometry.Pos.CENTER);
+        root.setPadding(new Insets(30));
+        root.setStyle("-fx-background-color: #2c3e50;");
+
+        loginButton.setOnAction(e -> Login.getLogin().showLogin(stage));
+        registerButton.setOnAction(e -> Register.getRegister().showRegister(stage));
+
+        stage.setScene(new Scene(root, 350, 250));
+        stage.setTitle("SecureChat v1.0");
+>>>>>>> 416c793 (Odświeżenie wyglądu UI i poprawa logiki czatu)
+>>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
         stage.show();
     }
 }

@@ -68,6 +68,10 @@ public class HttpSender {
 
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
     public static Key GetKey(String username) {
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -75,10 +79,24 @@ public class HttpSender {
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(java.net.URI.create(ENDPOINT + username))
+<<<<<<< HEAD
+=======
+=======
+    public static String getPublicKey(String username) {
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(java.net.URI.create("http://localhost:8082/getPublicKey/" + username))
+>>>>>>> 416c793 (Odświeżenie wyglądu UI i poprawa logiki czatu)
+>>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
                     .GET()
                     .build();
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -86,5 +104,38 @@ public class HttpSender {
 
         return null;
     }
+<<<<<<< HEAD
+=======
+=======
+            if (response.statusCode() == 200) {
+                return response.body();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static String getHistory(String user1, String user2) {
+        try {
+
+            String urlString = "http://localhost:8082/api/messages/history?user1=" + user1 + "&user2=" + user2;
+            java.net.URL url = new java.net.URL(urlString);
+            java.net.HttpURLConnection conn = (java.net.HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+
+            java.util.Scanner sc = new java.util.Scanner(conn.getInputStream());
+            StringBuilder sb = new StringBuilder();
+            while (sc.hasNext()) {
+                sb.append(sc.nextLine());
+            }
+            sc.close();
+            return sb.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "[]";
+        }
+    }
+>>>>>>> 416c793 (Odświeżenie wyglądu UI i poprawa logiki czatu)
+>>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
 
 }
