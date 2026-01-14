@@ -37,14 +37,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) {
       menu.showMenu(stage);
-<<<<<<< HEAD
-       // chatUser.showUserInput(stage);
-=======
-<<<<<<< HEAD
-       // chatUser.showUserInput(stage);
-=======
->>>>>>> 416c793 (Odświeżenie wyglądu UI i poprawa logiki czatu)
->>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
+
 
     }
 

@@ -15,38 +15,6 @@ public class MainMenu {
     }
 
     public void showMenu(Stage stage) {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
-        // Tworzymy przyciski do ekranów
-        Button loginButton = new Button("Login");
-        Button registerButton = new Button("Register");
-        Login login = Login.getLogin();
-        Register register = Register.getRegister();
-
-        // Akcje przycisków
-        loginButton.setOnAction(e -> {
-
-            login.showLogin(stage); // zakładamy, że Login ma metodę showLogin(Stage)
-        });
-
-        registerButton.setOnAction(e -> {
-
-            register.showRegister(stage); // zakładamy, że Register ma metodę showRegister(Stage)
-        });
-
-        // Układ pionowy
-        VBox root = new VBox(10, loginButton, registerButton);
-        root.setPadding(new Insets(20));
-
-        // Tworzymy scenę
-        Scene scene = new Scene(root, 300, 200);
-        stage.setScene(scene);
-        stage.setTitle("Main Menu");
-<<<<<<< HEAD
-=======
-=======
         Button loginButton = new Button("Zaloguj się");
         Button registerButton = new Button("Zarejestruj się");
 
@@ -64,8 +32,6 @@ public class MainMenu {
 
         stage.setScene(new Scene(root, 350, 250));
         stage.setTitle("SecureChat v1.0");
->>>>>>> 416c793 (Odświeżenie wyglądu UI i poprawa logiki czatu)
->>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
         stage.show();
     }
 }

@@ -68,45 +68,15 @@ public class HttpSender {
 
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
-    public static Key GetKey(String username) {
-        try {
-            HttpClient client = HttpClient.newHttpClient();
-
-
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(java.net.URI.create(ENDPOINT + username))
-<<<<<<< HEAD
-=======
-=======
     public static String getPublicKey(String username) {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(java.net.URI.create("http://localhost:8082/getPublicKey/" + username))
->>>>>>> 416c793 (Odświeżenie wyglądu UI i poprawa logiki czatu)
->>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
                     .GET()
                     .build();
 
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
-        return null;
-    }
-<<<<<<< HEAD
-=======
-=======
             if (response.statusCode() == 200) {
                 return response.body();
             }
@@ -135,7 +105,5 @@ public class HttpSender {
             return "[]";
         }
     }
->>>>>>> 416c793 (Odświeżenie wyglądu UI i poprawa logiki czatu)
->>>>>>> f901a3d (Odświeżenie wyglądu UI i poprawa logiki czatu)
 
 }
